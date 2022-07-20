@@ -3,7 +3,7 @@ const mongoose= require('mongoose')
 
 const app= express()  //start express
 
-const url= 'mongodb://localhost/UsersDb'
+const url= 'mongodb://0.0.0.0/UsersDb'
 
 mongoose.connect(url, {useNewUrlParser: true}) //useNewUrlParser is to avoid some warnings
 
@@ -19,6 +19,6 @@ const userRouter= require('./routes/user/routes')
 app.use('/user', userRouter)
 
 
-app.listen(4000, function(){
+app.listen(3000, function(){
     console.log('Server Started on port 4000')
 })
